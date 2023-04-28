@@ -1,0 +1,14 @@
+@mixin flexDisplay{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin contentContainers{
+    @include flexDisplay;
+    min-width:370px;
+    min-height:360px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+}

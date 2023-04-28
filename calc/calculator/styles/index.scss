@@ -1,0 +1,172 @@
+@import "./mixins";
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+  }
+  
+:root{
+    --Strongcyan: hsl(172, 67%, 45%);
+    --Verydarkcyan: hsl(183, 100%, 15%);
+    --Darkgrayishcyan: hsl(186, 14%, 43%);
+    --Grayishcyan: hsl(184, 14%, 56%);
+    --Lightgrayishcyan: hsl(185, 41%, 84%);
+    --Verylightgrayishcyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --borderRadius:0.8rem;
+    --buttonBorderRadius:0.48rem;
+}
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding:0;
+}
+
+body{
+    font-family: 'Space Mono', sans-serif;
+    min-height: 100dvh;
+    background:var(--Lightgrayishcyan);
+    @include flexDisplay;
+}
+
+.container{
+    padding:1.25rem;
+    display:flex;
+    flex-wrap:wrap;
+    background:var(--White);
+    border-radius: var(--borderRadius);
+    gap:2.4rem;
+    .left{
+
+    padding:1.25rem;
+     @include contentContainers;
+     div{
+        margin-bottom: 2rem;
+     }
+     .upper, .lower, .tip__container{
+        width:100%;
+     }
+     label{
+        color:var(--Verydarkcyan);
+        font-size: 24px;
+        font-weight:500;
+     }
+     input{
+        width:100%;
+        background:var(--Lightgrayishcyan);
+        display: inline-block;
+        color:var(--Verydarkcyan);
+        opacity:0.8;
+        font-size:24px;
+        font-weight:400;
+        padding:8px 18px;
+        border:none;
+        outline:none;
+        border-radius: var(--buttonBorderRadius);
+        margin-top: 0.48rem;
+        transition: all 0.2s ease-in-out;
+        &:focus{
+            outline:var(--Verydarkcyan) solid 2px;   
+        }
+     }
+     .tip__container{
+        h2{
+            display: inline-block;
+            margin-bottom:20px;
+            color:var(--Verydarkcyan);
+            font-size:24px;
+            font-weight:500;
+        }
+        .tips{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:0.8rem;
+            button{
+                transition:all 0.2s ease-in-out;
+                cursor: pointer;
+                width:100%;
+                // outline: none;
+                border: none;
+                display: inline-block;
+                padding:8px 18px;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                font-weight: 600;
+                border-radius: var(--buttonBorderRadius);
+                color:var(--Lightgrayishcyan);
+                background:var(--Verydarkcyan);
+                &.active{
+                    color:var(--Verydarkcyan);
+                    background:var(--Strongcyan);
+                    &:hover{
+                        filter:invert(1);
+                        border:var(--Verydarkcyan) solid 1px;
+                    }
+                }
+                &.custom{
+                    background: var( --Lightgrayishcyan);
+                    color:var(--Verydarkcyan);
+                    text-transform: capitalize;
+                    &:hover{
+                        filter:invert(1);
+                        border:var(--Verydarkcyan) solid 1px;
+                    }
+                }
+                &:hover{
+                    filter:invert(1);
+                    border:var(--Lightgrayishcyan) solid 1px;
+                }
+             }
+         }
+     }
+    }
+    .right{
+        min-width: max(64%,370px);
+        @include contentContainers;
+        background:var(--Verydarkcyan);
+        padding:1.25rem;
+        border-radius: var(--borderRadius);
+        color:var(--Strongcyan);
+        .amount{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            h4{
+              font-weight: 200;
+              font-size: 1rem;
+              line-height: 0.2rem;
+            }
+            h3{
+             font-weight:500;
+             font-size:1.2rem;
+             line-height: 0.4rem;
+             color:var(--Lightgrayishcyan);
+            }
+            h2{
+                font-weight: 800;
+                font-size: 2rem;
+                line-height: 0.8rem;
+                
+            }
+            }
+     button{
+        transition:all 0.2s ease-in-out;
+        cursor: pointer;
+        width:100%;
+        outline: none;
+        border: none;
+        display: inline-block;
+        padding:8px 18px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color:var(--Verydarkcyan);
+        border-radius: var(--buttonBorderRadius);
+        background:var(--Strongcyan);
+        &:hover{
+            filter:invert(1);
+            border:var(--Verydarkcyan) solid 1px;
+        }
+     }
+    }
+}

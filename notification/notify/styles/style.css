@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format('truetype'); 
+}
+
+:root{
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    --White: hsl(0, 0%, 100%);
+    --VeryLightGrayishBlue: hsl(210, 60%, 98%);
+    --LightGrayishBlue-1: hsl(211, 68%, 94%);
+    --LightGrayishBlue-2: hsl(205, 33%, 90%);
+    --GrayishBlue: hsl(219, 14%, 63%);
+    --DarkGrayishBlue: hsl(219, 12%, 42%);
+    --VeryDarkBlue: hsl(224, 21%, 14%);
+    --Bold:500;
+    --VeryBold:800;
+    --BorderRadiusSmall:.8rem;
+    --BorderRadiusBig:1.2rem;
+    --BoxShadow:0px 5px 16px var(--GrayishBlue);
+    --BaseFontSize:16px;
+}
+
+*{
+    
+    padding:0;
+    font:inherit;
+
+}
+
+body{
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    background:var(--VeryLightGrayishBlue);
+    overflow-x: hidden;
+}
+
+img{
+    display:block;
+    height:auto;
+    width:100%;
+}
+
+.container{
+    margin:8rem auto;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    background:var(--White);
+    border-radius: var(--BorderRadiusBig);
+    box-shadow: var(--BoxShadow);
+    padding:1.25rem;
+}
+
+@media (max-width:960px){
+.container{
+    width:88%;
+}
+}
+
+
+
+
+.container .upper{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-weight:500;
+    font-size:16px;
+    color:var(--VeryDarkBlue);
+}
+.container .upper h1{
+    font-size: calc(var(--BaseFontSize)*1.618);
+    font-weight: 800;
+}
+
+.container .upper span{
+    display:inline-block;
+    background:var(--Blue);
+    color:var(--White);
+    margin-left:0.25rem;
+    font-size:16px;
+    font-weight:500;
+    padding:0.3rem 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
+.container .lower{
+    display:grid;
+}
+
+.container .lower .item{
+    display:flex;
+    margin-bottom:1rem;
+    border-radius: var(--BorderRadiusSmall);
+    align-items: center;
+    gap:1.2rem;
+    padding:0.8rem .8rem;
+    transition: all 0.2s ease-in;
+}
+
+.lower .item .image-container{
+    min-width:48px;
+  height:48px;
+  width:48px;
+  border-radius:100%;
+  overflow: hidden;
+}
+
+.lower .item .image-container[aside="true"]{
+    align-self: flex-end;
+}
+
+
+
+.lower .item .details{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    color:var(--DarkGrayishBlue);
+    flex:1;
+}
+
+.item p, .item h4{
+    display:inline-block;
+    margin: 5px 0;
+}
+
+.item .details span{
+  font-weight: 800;
+  color:var(--VeryDarkBlue);
+}
+
+.item .details span.blue{
+    font-weight: 800;
+    color:var(--Blue);
+    cursor: pointer;
+  }
+
+  .item .details span.semibold{
+    font-weight: 500;
+  }
+  
+.item img{
+    object-fit: contain;
+}
+
+.item .details span.online{
+    display:inline-block;
+   height:7px;
+   width:7px;
+   border-radius: 100%;
+   background: var(--Red);
+   margin-left:5px;
+   margin-bottom: 2px;
+}
+
+
+.unread{
+    background:var(--LightGrayishBlue-2);
+}
+
+
+.item .info{
+    border: 1px solid var(--LightGrayishBlue-2);
+    border-radius: 4px;
+    padding:0.4rem 0.64rem;
+    letter-spacing: .1rem;
+}
+
+span.blue{
+    color:var(--Blue);
+}
